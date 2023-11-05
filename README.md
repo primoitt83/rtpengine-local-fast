@@ -1,4 +1,10 @@
-# rtpengine-local
+# rtpengine-local-fast
+
+Same as rtpengine-local but no compilation need it.
+
+Rtpengine will be installed using precompiled deb files.
+
+So it's a lot faster to build and run from Docker.
 
 ## How to test
 
@@ -20,11 +26,3 @@ git clone https://github.com/primoitt83/rtpengine-local.git
 cd rtpengine-local
 docker-compose up -d
 ````
-
-
-
-
-
-
-
-
