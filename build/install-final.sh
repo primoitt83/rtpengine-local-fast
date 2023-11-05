@@ -15,7 +15,11 @@ apt-get install -y \
     libio-socket-inet6-perl \
     libsocket6-perl \
     iptables \
+    iptables-persistent \
     module-assistant \
     /*.deb
+
+## Rtpengine packet forwarding
+echo 'add 0' > /proc/rtpengine/control
 
 apt-get clean; rm -rf /var/lib/apt/* /tmp/* /var/tmp/* /usr/share/doc/*
