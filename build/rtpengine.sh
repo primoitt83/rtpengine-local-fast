@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 ## Add iptables
 iptables -I INPUT -p udp -m udp --dport 5060 -j ACCEPT
