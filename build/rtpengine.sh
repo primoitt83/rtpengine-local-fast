@@ -1,5 +1,16 @@
 #!/bin/sh
 
+## Load rtpengine driver on kernel
+modprobe xt_RTPENGINE
+
+## Rtpengine packet forwarding to table=0
+if [ -d "/proc/rtpengine" ]; then
+    ## there's table, nothing to do
+else
+    ## no table, so we'll create
+    echo 'add 0' > /proc/rtpengine/control
+fi
+
 ## Add iptables
 iptables -I INPUT -p udp -m udp --dport 5060 -j ACCEPT
 iptables -I INPUT -p tcp -m tcp --dport 5060 -j ACCEPT
